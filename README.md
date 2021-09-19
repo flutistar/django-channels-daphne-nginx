@@ -1,17 +1,20 @@
-# django-channels-daphne-nginx
+### django-channels-daphne-nginx
 Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.04 with NGINX
 
-1. Install asdf (version management)
-- sudo apt update
- https://asdf-vm.com/#/core-manage-asdf
-- Run `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0`
+## 1. Install asdf (version management)
+[asdf](https://github.com/asdf-vm/asdf) is a CLI tool that can manage multiple language runtime versions on a per-project basis.
+
+- First we need to run `sudo apt update`
+- Run `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0` to install asdf
 - Add the below command into the ~/.bashrc
- * . $HOME/.asdf/asdf.sh
- * . $HOME/.asdf/completions/asdf.bash
+   ```
+   . $HOME/.asdf/asdf.sh
+   . $HOME/.asdf/completions/asdf.bash
+   ```
 - Restart the bash
 - Run `asdf reshim`
 
-2. install python plugin into 'asdf'
+## 2. install python plugin by using 'asdf'
  * Run `asdf plugin add python`
  * Run `asdf install python <version>` e.g. `asdf install python 3.7.6`
  
@@ -20,7 +23,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
  
  
  * Check if python 3.7.6 is installed - `python --version`
-3. Download the project from the github and Run it as development server
+## 3. Download the project from the github and Run it as development server
  * `git clone <git_url>`
  * Navigate into the project dir.
  * Create Virtual Environment and activate the virtualenv
@@ -33,7 +36,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
   `python manage.py runserver`
   
  
- 4. Install guicorn and run the project by using gunicorn
+ ## 4. Install guicorn and run the project by using gunicorn
   * Run `pip install gunicorn`
   * Run `sudo nano /etc/systemd/system/gunicorn.service)
   * Write the below code into the gunicorn.service file
@@ -57,7 +60,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
    * `sudo systemctl enable gunicorn.service`
    
    Check if the `gunicorn.sock` file exists in the project directory
- 5. Install `daphne` and run the project with `daphne` server
+ ## 5. Install `daphne` and run the project with `daphne` server
    * `pip install daphne`
    * `sudo nano /etc/systemd/system/daphne.service`
    * Write the below code into the `daphne.service`
@@ -82,7 +85,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
    
    Check if the `daphne.sock` file exists in the project directory
   
-  6. Install `supervisor` and `redis` for Django-Celery
+  ## 6. Install `supervisor` and `redis` for Django-Celery
   
    * `sudo apt update`
    * `sudo apt install redis-server`
@@ -161,7 +164,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
      `sudo supervisorctl start <celery_name>`
      `sudo supervisorctl status <celery_name>`
  
- 7. NGINX configuration
+ ## 7. NGINX configuration
    * `sudo nano /etc/nginx/sites-available`
    * Add the following
      ```
