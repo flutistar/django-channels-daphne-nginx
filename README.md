@@ -80,8 +80,8 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
      WantedBy=multi-user.target
    ```
    * `sudo systemctl daemon-reload`
-   * `sudo systemctl start gunicorn.service`
-   * `sudo systemctl enable gunicorn.service`
+   * `sudo systemctl start daphne.service`
+   * `sudo systemctl enable daphne.service`
    
    Check if the `daphne.sock` file exists in the project directory
   
