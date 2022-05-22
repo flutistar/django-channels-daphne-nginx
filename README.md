@@ -89,7 +89,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
   
    * `sudo apt update`
    * `sudo apt install redis-server`
-   * Check if the `redis-servier is installed`
+   * Check if the `redis-server is installed`
       `redis-cli ping`
    * `sudo apt intall suervisor`
    * Add 2 `supervisor` configuration files into `/etc/supervisor/conf.d/`
