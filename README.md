@@ -14,16 +14,16 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
 - Restart the bash
 - Run `asdf reshim`
 
-## 2. install python plugin by using 'asdf'
+## 2. Add Python plugin into 'asdf'
  * Run `asdf plugin add python`
  * Run `asdf install python <version>` e.g. `asdf install python 3.7.6`
  
- If python plugin doesn't install properly, check this url
+ If python plugin doesn't install properly, you can check this url
  https://github.com/pyenv/pyenv/wiki/Common-build-problems
  
  
  * Check if python 3.7.6 is installed - `python --version`
-## 3. Download the project from the github and Run it as development server
+## 3. Download the project from the github and Run it as development mode
  * `git clone <git_url>`
  * Navigate into the project dir.
  * Create Virtual Environment and activate the virtualenv
@@ -159,7 +159,7 @@ Deploy Django(+Channels + Celery + Django REST Framework) project on Ubuntu 20.0
      ```
    * `sudo supervisorctl reread`
    * `sudo supervisorctl update`
-   * Run the following commands to stop, start, and/or check the status of the pichacelery program:
+   * Run the following commands to stop, start, and/or check the status of the celery program:
      `sudo supervisorctl stop <celery_name>`
      `sudo supervisorctl start <celery_name>`
      `sudo supervisorctl status <celery_name>`
